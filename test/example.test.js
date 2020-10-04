@@ -1,0 +1,37 @@
+const assert = require("assert");
+
+//Require the dev-dependencies
+let chai = require("chai");
+let chaiHttp = require("chai-http");
+let server = require("../server");
+let should = chai.should();
+
+chai.use(chaiHttp);
+
+describe("Get nuclear code server code", () => {
+  it("it should get nuclear codes from server", (done) => {
+    chai
+      .request(server)
+      .post("/api/v1/nuclear/codes/status")
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        res.body.should.have.property("data");
+        res.body.data.should.have.property("nuclearlaunchCodes");
+        done();
+      });
+  });
+});
+
+// describe("Get nuclear code server code", () => {
+//   it("it should get nuclear codes", (done) => {
+//     chai
+//       .request(server)
+//       .post("/api/v1/nuclear/codes")
+//       .send({})
+//       .end((err, res) => {
+//         res.should.have.status(200);
+//         done();
+//       });
+//   });
+// });
