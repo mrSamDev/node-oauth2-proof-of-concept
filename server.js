@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 });
 app.use((err, req, res, next) => {
   const fullUrl = req.originalUrl;
-  console.log("🔥 Error on:", fullUrl, `${err}`);
+  console.log("🔥Error on:", fullUrl, `${err}`);
   return res.status(err.status || httpStatus.INTERNAL_SERVER_ERROR).json({
     error: true,
     message: err.message,
