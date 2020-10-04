@@ -15,11 +15,9 @@ app.use(cors());
 
 const contoller = require("./src/api/v1/contollers/client.contoller");
 
-app.post(
-  prefix + "/nuclear/codes/status",
-  contoller
-  // (req, res) => res.status(httpStatus.OK).send({ success: true, message: "Codes are active" })
-);
+app.get(prefix + "/nuclear/codes", contoller);
+
+app.get(prefix + "/nuclear/codes/status", (req, res) => res.status(httpStatus.OK).send({ success: true, message: "Codes are active" }));
 
 routes.forEach((route) => app.use(prefix, route));
 
