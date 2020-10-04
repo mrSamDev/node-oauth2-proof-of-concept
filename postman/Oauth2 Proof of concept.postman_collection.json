@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "c253353d-9ba2-42d6-b3ff-f6c75e1d5b71",
+		"name": "Oauth2 Proof of concept",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:7001/api/v1/nuclear/codes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJOR1wvWEYwQmo5dlVzdUVZSE8xNjc4dmJ3RVdCNjZkcXRqaFJWeHBjVG5qdz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI3OGI2NjkyZi00YTMyLTQ5MjAtYTU2ZC1hNjM3OGViOGIzZTciLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiY3VzdG9tOmxhc3ROYW1lIjoiYXdzMiIsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTIuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0yX0JFRUVjT0JDSyIsImNvZ25pdG86dXNlcm5hbWUiOiJhd3MyQG1haWxpbmF0b3IuY29tIiwiYXVkIjoiMzUwajc5YzIxOXIxMHBtcmoyNzM0aTVvaXMiLCJldmVudF9pZCI6ImU3ZDA1MTMxLTc5ODQtNGM0MS1hOTA2LTUwYzlhM2E2MDY0OSIsImN1c3RvbTpmaXJzdE5hbWUiOiJhd3MyIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MDEyOTg2MTgsImV4cCI6MTYwMTMwMjIxOCwiY3VzdG9tOnJvbGUiOiJhZG1pbiIsImlhdCI6MTYwMTI5ODYxOCwiZW1haWwiOiJhd3MyQG1haWxpbmF0b3IuY29tIn0.HnQ_Qhumdbl3eymZJZBF7RkB24vZyfzEvbiv0qKN-XtsHfvMKCJoVcQkSattjd50huHTlzY-BDOxfcvY6sWn2gzqtdYPygF-GHR3D4MRvF9ybmg6eMuv-V8MVfY1qefe1Aw8LsXCRfXiR8HtUwJenFwk_crLOd7GR-o4rZ_CVAkzlImw5dw8g_ooP0I42u-m_0oi4RcB4VBti2PJxgD-kmeImf3BiZAXFk2UmeViva2Fmu0rPCCeRQ-RZoJkjX6TFKl-DwOEO-23h-HlPFre4ZjePeDL7mqpIhfVbFbIzWyYmq5BN_f185UFEAUqNss-cTbwLttnoyCMm7z-xb8-nw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"currency\": {\n        \"code\": \"usd\"\n    },\n    \"monthlyPrice\": 1,\n    \"yearlyPrice\": 12,\n    \"title\": \"test plan 1\",\n    \"features\": [\n        {\n            \"_id\": \"_id_001\",\n            \"title\": \"feature 001\",\n            \"value\": 10,\n            \"description\": \"qwerty qwerty\",\n            \"hierarchy\": 1\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7001/api/v1/nuclear/codes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"v1",
+						"nuclear",
+						"codes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
